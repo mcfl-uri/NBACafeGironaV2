@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "950088957921",
+    "project_id": "nbacafegironav2",
+    "storage_bucket": "nbacafegironav2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950088957921:android:edfd7deab3a51d1d381ca0",
+        "android_client_info": {
+          "package_name": "cat.nbacafe.gironav2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950088957921-qt9i6vfi82483h70hsge5u3blm5rf9qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnrfE2WLBxTszwjSTp3i-ujKlSn4RkoPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950088957921-qt9i6vfi82483h70hsge5u3blm5rf9qd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
