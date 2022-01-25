@@ -63,7 +63,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Contrassenya"
+            android:hint="Contrasenya"
             android:textColorHint="#EFEFEF"
             app:boxBackgroundColor="#5D000000"
             app:boxStrokeColor="#17408B"
