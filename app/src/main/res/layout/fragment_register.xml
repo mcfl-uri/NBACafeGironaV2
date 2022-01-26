@@ -131,11 +131,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/createUserBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#5D17408B"
             android:fontFamily="@font/montserrat"
-            android:minWidth="150dp"
             android:text="ENDAVANT"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
@@ -143,11 +142,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backToLoginBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#5DC9082A"
             android:fontFamily="@font/montserrat"
-            android:minWidth="150dp"
             android:text="CANCEL·LA"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBot"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
