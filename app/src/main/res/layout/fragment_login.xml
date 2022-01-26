@@ -53,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
+                android:inputType="textEmailAddress"
                 android:textColor="#EFEFEF"
                 android:textSize="18sp" />
 
@@ -103,8 +104,8 @@
             android:id="@+id/textRegistra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No en tens? "
             android:fontFamily="@font/montserrat"
+            android:text="No en tens? "
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@id/guidelinePass"
             app:layout_constraintEnd_toStartOf="@id/registraBtn"
@@ -117,13 +118,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:textSize="14sp"
-            android:textColor="#17408B"
             android:text="REGISTRA'T!"
+            android:textColor="#17408B"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelinePass"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/textRegistra"
-            app:layout_constraintTop_toBottomOf="@id/passLayout"
-            app:layout_constraintBottom_toBottomOf="@+id/guidelinePass"/>
+            app:layout_constraintTop_toBottomOf="@id/passLayout" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
