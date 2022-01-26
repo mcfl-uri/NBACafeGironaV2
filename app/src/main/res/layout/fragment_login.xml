@@ -70,7 +70,7 @@
             app:boxBackgroundColor="#5D000000"
             app:boxStrokeColor="#17408B"
             app:hintTextColor="#17408B"
-            app:layout_constraintBottom_toTopOf="@id/textRegistra"
+            app:layout_constraintBottom_toTopOf="@id/loginBtn"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintTop_toBottomOf="@id/emailLayout"
@@ -90,41 +90,58 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#5D17408B"
             android:fontFamily="@font/montserrat"
-            android:minWidth="150dp"
             android:text="ENDAVANT"
+            app:layout_constraintBottom_toBottomOf="@id/guidelinePass"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/guidelinePass" />
+            app:layout_constraintTop_toBottomOf="@id/passLayout" />
 
         <TextView
             android:id="@+id/textRegistra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="No en tens? "
+            android:text="@string/registraText"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@id/guidelinePass"
-            app:layout_constraintEnd_toStartOf="@id/registraBtn"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/passLayout" />
+            app:layout_constraintTop_toBottomOf="@id/guidelinePass" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/registraBtn"
-            style="@style/Widget.Material3.Button.TextButton"
+        <TextView
+            android:id="@+id/altresText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="REGISTRA'T!"
-            android:textColor="#17408B"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/guidelinePass"
+            android:text="O inica sessió amb"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintStart_toEndOf="@id/textRegistra"
-            app:layout_constraintTop_toBottomOf="@id/passLayout" />
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/textRegistra"
+            app:layout_constraintBottom_toTopOf="@+id/googleAuthBtn"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/googleAuthBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="GOOGLE"
+            android:backgroundTint="#1Fffffff"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/google"
+            app:iconGravity="textStart"
+            app:iconSize="20dp"
+            app:iconTint="@null"
+            app:strokeColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBot"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/textRegistra" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -179,6 +196,28 @@
             app:layout_constraintEnd_toEndOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintTop_toBottomOf="@+id/nbaLogo" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginRight="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/altresText"
+            app:layout_constraintTop_toTopOf="@id/altresText"
+            app:layout_constraintBottom_toBottomOf="@id/altresText"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginStart="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/altresText"
+            app:layout_constraintTop_toTopOf="@id/altresText"
+            app:layout_constraintBottom_toBottomOf="@id/altresText"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
