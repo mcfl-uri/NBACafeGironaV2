@@ -118,18 +118,18 @@
             android:fontFamily="@font/montserrat"
             android:text="O inica sessió amb"
             android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/googleAuthBtn"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/textRegistra"
-            app:layout_constraintBottom_toTopOf="@+id/googleAuthBtn"/>
+            app:layout_constraintTop_toBottomOf="@id/textRegistra" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/googleAuthBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#1Fffffff"
             android:fontFamily="@font/montserrat"
             android:text="GOOGLE"
-            android:backgroundTint="#1Fffffff"
             android:textColor="@color/black"
             android:textSize="17sp"
             app:cornerRadius="20dp"
@@ -137,11 +137,11 @@
             app:iconGravity="textStart"
             app:iconSize="20dp"
             app:iconTint="@null"
-            app:strokeColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBot"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/textRegistra" />
+            app:layout_constraintTop_toBottomOf="@id/textRegistra"
+            app:strokeColor="@color/black" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -201,23 +201,23 @@
             android:id="@+id/divider"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
             android:layout_marginRight="5dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@id/altresText"
             app:layout_constraintEnd_toStartOf="@id/altresText"
-            app:layout_constraintTop_toTopOf="@id/altresText"
-            app:layout_constraintBottom_toBottomOf="@id/altresText"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/altresText" />
 
         <View
             android:id="@+id/divider2"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:background="?android:attr/listDivider"
             android:layout_marginStart="5dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@id/altresText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/altresText"
-            app:layout_constraintTop_toTopOf="@id/altresText"
-            app:layout_constraintBottom_toBottomOf="@id/altresText"/>
+            app:layout_constraintTop_toTopOf="@id/altresText" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
