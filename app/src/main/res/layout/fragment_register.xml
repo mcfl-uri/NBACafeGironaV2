@@ -44,6 +44,34 @@
             app:layout_constraintTop_toBottomOf="@+id/nbaLogo" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:focusedByDefault="false"
+            android:hint="Nom d'usuari"
+            android:textColorHint="#EFEFEF"
+            android:textSize="20sp"
+            app:boxBackgroundColor="#5D000000"
+            app:boxStrokeColor="#17408B"
+            app:hintTextColor="#17408B"
+            app:layout_constraintBottom_toTopOf="@id/emailLayout"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/guidelineEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:inputType="text"
+                android:textColor="#EFEFEF"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
@@ -58,7 +86,7 @@
             app:layout_constraintBottom_toTopOf="@id/passLayout"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toStartOf="@id/guideline1"
-            app:layout_constraintTop_toBottomOf="@id/guidelineEmail">
+            app:layout_constraintTop_toBottomOf="@id/usernameLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
@@ -138,7 +166,8 @@
             android:text="ENDAVANT"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
-            app:layout_constraintTop_toTopOf="@id/guidelinePass" />
+            app:layout_constraintTop_toTopOf="@id/guidelinePass"
+            app:layout_constraintBottom_toTopOf="@+id/backToLoginBtn"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backToLoginBtn"

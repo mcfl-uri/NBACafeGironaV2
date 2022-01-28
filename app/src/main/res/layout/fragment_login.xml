@@ -93,7 +93,12 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#5D17408B"
             android:fontFamily="@font/montserrat"
+            android:minHeight="55dp"
             android:text="ENDAVANT"
+            app:icon="@drawable/ic_outline_login_24"
+            app:iconGravity="textStart"
+            app:iconSize="20dp"
+            app:iconTint="@null"
             app:layout_constraintBottom_toBottomOf="@id/guidelinePass"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
@@ -175,14 +180,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35" />
+            app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelinePass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.65" />
+            app:layout_constraintGuide_percent="0.7" />
 
         <TextView
             android:id="@+id/loginText"

@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
                         view?.findNavController()
                             ?.navigate(R.id.action_registerFragment_to_loginFragment)
                     } else {
-                        Toast.makeText(context, "S'ha porduït un error", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "S'ha produït un error", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
