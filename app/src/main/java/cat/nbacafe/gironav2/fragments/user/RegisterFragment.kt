@@ -52,7 +52,7 @@ class RegisterFragment : Fragment() {
                 } else if (binding.passEditText.text.toString().length < 8) {
                     Toast.makeText(
                         context,
-                        "La contrasenya ha de ser de més de 8 caràcters",
+                        "La contrasenya ha de ser de 8 o més caràcters",
                         Toast.LENGTH_SHORT
                     ).show()
                 } else if (binding.passEditText.text.toString() != binding.confirmPassEditText.text.toString()) {

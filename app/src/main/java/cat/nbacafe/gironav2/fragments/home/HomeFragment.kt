@@ -28,6 +28,10 @@ class HomeFragment : Fragment() {
             view?.findNavController()?.navigate(R.id.action_homeFragment_to_loginFragment)
         }
 
+        binding.profileBtn.setOnClickListener { View ->
+            view?.findNavController()?.navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
         return binding.root
     }
 }
