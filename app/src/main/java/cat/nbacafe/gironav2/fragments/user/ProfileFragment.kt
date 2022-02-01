@@ -31,6 +31,9 @@ class ProfileFragment : Fragment() {
         val db = Firebase.firestore
 
         binding.emailEditText.setText(auth.currentUser?.email.toString())
+        db.collection("client").document(auth.currentUser?.email.toString()).get().addOnSuccessListener {
+            binding.usernameEditText.setText(it.get("username") as String)
+        }
 
         binding.changePassBtn.setOnClickListener { View ->
             binding.changePassBtn.visibility = android.view.View.GONE
@@ -51,19 +54,21 @@ class ProfileFragment : Fragment() {
                     }
             }
 
-            db.collection("client").document(email).set(
-                hashMapOf(
-                    "username" to username
-                )
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Toast.makeText(context, "Canvis realitzats", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, "S'ha produït un error", Toast.LENGTH_SHORT).show()
+            if (username != "") {
+                db.collection("client").document(email).set(
+                    hashMapOf(
+                        "username" to username
+                    )
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        Toast.makeText(context, "Canvis realitzats", Toast.LENGTH_SHORT).show()
+                        view?.findNavController()
+                            ?.navigate(R.id.action_profileFragment_to_homeFragment)
+                    } else {
+                        Toast.makeText(context, "S'ha produït un error", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
-
-            view?.findNavController()?.navigate(R.id.action_profileFragment_to_homeFragment)
         }
 
         binding.backBtn.setOnClickListener { View ->
