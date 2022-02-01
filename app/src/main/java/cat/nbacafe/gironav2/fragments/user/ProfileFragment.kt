@@ -32,7 +32,8 @@ class ProfileFragment : Fragment() {
 
         binding.emailEditText.setText(auth.currentUser?.email.toString())
         db.collection("client").document(auth.currentUser?.email.toString()).get().addOnSuccessListener {
-            binding.usernameEditText.setText(it.get("username") as String)
+            if (it.exists() && it.get("username") != null)
+                binding.usernameEditText.setText(it.get("username") as String)
         }
 
         binding.changePassBtn.setOnClickListener { View ->
