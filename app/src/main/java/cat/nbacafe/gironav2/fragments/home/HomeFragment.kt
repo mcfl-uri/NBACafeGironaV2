@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import cat.nbacafe.gironav2.R
 import cat.nbacafe.gironav2.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
@@ -22,6 +24,14 @@ class HomeFragment : Fragment() {
             inflater,
             R.layout.fragment_home, container, false
         )
+
+        val auth = FirebaseAuth.getInstance()
+        val db = Firebase.firestore
+
+        db.collection("client").document(auth.currentUser?.email.toString()).get().addOnSuccessListener {
+            if (it.exists() && it.get("username") != null)
+                binding.homeText.setText("Hola de nou, ${it.get("username") as String}!")
+        }
 
         binding.logoutBtn.setOnClickListener { View ->
             FirebaseAuth.getInstance().signOut()
