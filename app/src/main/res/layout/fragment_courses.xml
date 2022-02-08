@@ -58,6 +58,7 @@
             android:id="@+id/backFromCoursesBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:cornerRadius="10dp"
             android:backgroundTint="#5DC9082A"
             android:fontFamily="@font/montserrat"
             android:text="ENRERE"

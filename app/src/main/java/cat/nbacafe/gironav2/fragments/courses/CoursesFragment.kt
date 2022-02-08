@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.nbacafe.gironav2.R
@@ -43,6 +44,10 @@ class CoursesFragment : Fragment() {
 
         EventChangeListener()
 
+        binding.backFromCoursesBtn.setOnClickListener { View ->
+            view?.findNavController()?.navigate(R.id.action_coursesFragment_to_homeFragment)
+        }
+
         return binding.root
     }
 
@@ -58,7 +63,6 @@ class CoursesFragment : Fragment() {
                     for (dc : DocumentChange in value?.documentChanges!!) {
                         if (dc.type == DocumentChange.Type.ADDED) {
                             courses.add(dc.document.toObject(Course::class.java))
-
                         }
                     }
                     myAdapter.notifyDataSetChanged()
