@@ -42,6 +42,10 @@ class HomeFragment : Fragment() {
             view?.findNavController()?.navigate(R.id.action_homeFragment_to_profileFragment)
         }
 
+        binding.platsBtn.setOnClickListener { View ->
+            view?.findNavController()?.navigate(R.id.action_homeFragment_to_coursesFragment)
+        }
+
         return binding.root
     }
 }
