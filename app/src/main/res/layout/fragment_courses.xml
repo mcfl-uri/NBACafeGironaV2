@@ -56,12 +56,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backFromCoursesBtn"
+            android:layout_marginTop="15dp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cornerRadius="10dp"
+            android:layout_height="0dp"
             android:backgroundTint="#5DC9082A"
             android:fontFamily="@font/montserrat"
             android:text="ENRERE"
+            app:layout_constraintTop_toTopOf="@id/guidelinePass"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             app:layout_constraintStart_toEndOf="@id/guideline1"
             app:layout_constraintBottom_toTopOf="@+id/guidelineBot"/>
