@@ -44,6 +44,7 @@ class CoursesFragment : Fragment() {
 
         myAdapter = CourseAdapter(courses) {
             sharedViewModel.setItem(it)
+            view?.findNavController()?.navigate(R.id.action_coursesFragment_to_newReviewFragment)
         }
 
         crv.adapter = myAdapter

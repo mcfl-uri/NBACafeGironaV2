@@ -3,17 +3,16 @@ package cat.nbacafe.gironav2.common
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import cat.nbacafe.gironav2.fragments.courses.Course
 
 class SharedViewModel : ViewModel() {
-    private var _selectedItem = MutableLiveData("")
+    private lateinit var selectedItem: Course
 
-    val selectedItem: LiveData<String> = _selectedItem
-
-    fun setItem(item: String) {
-        _selectedItem.value = item
+    fun setItem(item: Course) {
+        selectedItem = item
     }
 
-    fun getItem() : String {
-        return _selectedItem.value.toString()
+    fun getItem() : Course {
+        return selectedItem
     }
 }

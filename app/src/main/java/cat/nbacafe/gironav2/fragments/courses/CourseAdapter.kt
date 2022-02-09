@@ -13,13 +13,13 @@ import java.io.File
 import java.util.ArrayList
 
 class CourseAdapter(private val courseList: ArrayList<Course>,
-                    private val clickListener: (String) -> Unit): RecyclerView.Adapter<CourseAdapter.CourseHolder>() {
+                    private val clickListener: (Course) -> Unit): RecyclerView.Adapter<CourseAdapter.CourseHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseHolder {
         return CourseHolder(LayoutInflater.from(parent.context)
             .inflate(R.layout.course_item,
                 parent, false)) {
-            clickListener(courseList[it].nom)
+            clickListener(courseList[it])
         }
     }
 
