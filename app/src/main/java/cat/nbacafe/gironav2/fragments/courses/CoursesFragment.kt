@@ -5,12 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cat.nbacafe.gironav2.R
+import cat.nbacafe.gironav2.common.SharedViewModel
 import cat.nbacafe.gironav2.databinding.FragmentCoursesBinding
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.EventListener
@@ -22,6 +25,7 @@ class CoursesFragment : Fragment() {
     private lateinit var courses: ArrayList<Course>
     private lateinit var myAdapter: CourseAdapter
     private lateinit var db: FirebaseFirestore
+    val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +42,9 @@ class CoursesFragment : Fragment() {
 
         courses = arrayListOf()
 
-        myAdapter = CourseAdapter(courses)
+        myAdapter = CourseAdapter(courses) {
+            sharedViewModel.setItem(it)
+        }
 
         crv.adapter = myAdapter
 

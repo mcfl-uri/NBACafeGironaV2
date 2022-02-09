@@ -12,12 +12,15 @@ import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 import java.util.ArrayList
 
-class CourseAdapter(private val courseList: ArrayList<Course>): RecyclerView.Adapter<CourseAdapter.CourseHolder>() {
+class CourseAdapter(private val courseList: ArrayList<Course>,
+                    private val clickListener: (String) -> Unit): RecyclerView.Adapter<CourseAdapter.CourseHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.course_item, parent, false)
-
-        return CourseHolder(itemView)
+        return CourseHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.course_item,
+                parent, false)) {
+            clickListener(courseList[it].nom)
+        }
     }
 
     override fun onBindViewHolder(holder: CourseHolder, position: Int) {
@@ -38,11 +41,17 @@ class CourseAdapter(private val courseList: ArrayList<Course>): RecyclerView.Ada
         return courseList.size
     }
 
-    class CourseHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class CourseHolder(itemView: View, clickAtPosition: (Int) -> Unit): RecyclerView.ViewHolder(itemView) {
 
         val courseName : TextView = itemView.findViewById(R.id.courseNameView)
         val coursePrice : TextView = itemView.findViewById(R.id.coursePriceView)
         val courseImage : ImageView = itemView.findViewById(R.id.courseBg)
+
+        init {
+            itemView.setOnClickListener {
+                clickAtPosition(adapterPosition)
+            }
+        }
 
     }
 }
