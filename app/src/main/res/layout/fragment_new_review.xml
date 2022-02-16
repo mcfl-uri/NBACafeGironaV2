@@ -32,12 +32,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="@id/topImage"
-            app:layout_constraintEnd_toStartOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="@id/guideline1">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -47,11 +47,9 @@
 
                 <TextView
                     android:id="@+id/courseNameView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
                     android:fontFamily="@font/montserrat"
-                    android:maxWidth="160dp"
                     android:text="Nom"
                     android:textAlignment="center"
                     android:textColor="@color/white"
