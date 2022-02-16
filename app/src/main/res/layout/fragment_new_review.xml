@@ -76,6 +76,18 @@
             </TableRow>
         </TableLayout>
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profilePic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@id/editTextTextMultiLine"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/editTextTextMultiLine"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:shapeAppearance="@style/ShapeAppearance.App.CircleImageView"
+            app:srcCompat="@drawable/profile" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
             android:layout_width="wrap_content"
@@ -115,13 +127,40 @@
             android:id="@+id/editTextTextMultiLine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:ems="10"
             android:gravity="start|top"
+            android:hint="La teva ressenya"
             android:inputType="textMultiLine"
+            android:maxLength="240"
             app:layout_constraintBottom_toTopOf="@id/guidelinePass"
             app:layout_constraintEnd_toStartOf="@id/guideline2"
-            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintStart_toEndOf="@id/profilePic"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5D17408B"
+            android:fontFamily="@font/montserrat"
+            android:text="ENVIA"
+            app:layout_constraintBottom_toTopOf="@+id/cancelBtn"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/guidelinePass" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5DC9082A"
+            android:fontFamily="@font/montserrat"
+            android:text="ENRERE"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBot"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/sendBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
