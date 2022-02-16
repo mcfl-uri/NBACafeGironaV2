@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -58,6 +59,23 @@ class NewReviewFragment : Fragment() {
             binding.profilePic.setImageBitmap(bitmap)
         }.addOnFailureListener {
             binding.profilePic.setImageResource(R.drawable.person_outline_black)
+        }
+
+        binding.sendBtn.setOnClickListener { View ->
+            db.collection("review").document(alias+item.nom).set(
+                hashMapOf(
+                    "producte" to item.nom,
+                    "usuari" to alias,
+                    "text" to binding.editTextTextMultiLine.text.toString()
+                )
+            ).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(context, "Review publicada", Toast.LENGTH_SHORT).show()
+                    view?.findNavController()?.navigate(R.id.action_newReviewFragment_to_coursesFragment)
+                } else {
+                    Toast.makeText(context, "S'ha produït un error", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
         binding.cancelBtn.setOnClickListener { View ->
