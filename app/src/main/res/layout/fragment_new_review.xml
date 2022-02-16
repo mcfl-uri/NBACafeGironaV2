@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,11 +25,58 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+            android:tint="#B2222222"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guidelineTop"
-            android:tint="#B2222222" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/topImage"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/courseNameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:maxWidth="160dp"
+                    android:text="Nom"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/coursePriceView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:maxWidth="160dp"
+                    android:text="Preu"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </TableRow>
+        </TableLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -73,10 +120,10 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintBottom_toTopOf="@id/guidelinePass"
             app:layout_constraintEnd_toStartOf="@id/guideline2"
-            app:layout_constraintTop_toBottomOf="@id/guidelineTop"
-            app:layout_constraintBottom_toTopOf="@id/guidelinePass"/>
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
