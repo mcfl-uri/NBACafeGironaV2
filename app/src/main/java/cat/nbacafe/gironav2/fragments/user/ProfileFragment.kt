@@ -61,10 +61,10 @@ class ProfileFragment : Fragment() {
                 binding.usernameEditText.setText(it.get("username") as String)
         }
 
-        alias = binding.emailEditText.text.toString().trim().substringBefore(".")
+        alias = auth.currentUser?.email.toString()
 
 
-        val storage = FirebaseStorage.getInstance().reference.child(alias + ".jpg")
+        val storage = FirebaseStorage.getInstance().reference.child("$alias.jpg")
         val image = File.createTempFile("img", "jpg")
         storage.getFile(image).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(image.absolutePath)
