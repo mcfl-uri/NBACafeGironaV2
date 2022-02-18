@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/userReviewsFragment"
-        android:name="cat.nbacafe.gironav2.fragments.user.UserReviewsFragment"
+        android:name="cat.nbacafe.gironav2.fragments.reviews.UserReviewsFragment"
         android:label="fragment_user_reviews"
         tools:layout="@layout/fragment_user_reviews" >
         <action

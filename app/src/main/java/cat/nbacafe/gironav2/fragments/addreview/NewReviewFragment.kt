@@ -62,10 +62,9 @@ class NewReviewFragment : Fragment() {
         }
 
         binding.sendBtn.setOnClickListener { View ->
-            db.collection("review").document(alias+item.nom).set(
+            db.collection("client/"+alias+"/review").document(item.nom).set(
                 hashMapOf(
                     "producte" to item.nom,
-                    "usuari" to alias,
                     "text" to binding.editTextTextMultiLine.text.toString()
                 )
             ).addOnCompleteListener {
