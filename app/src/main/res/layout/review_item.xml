@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/montserrat"
-            android:maxWidth="310dp"
+            android:maxWidth="200dp"
             android:text="Review del producteaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
